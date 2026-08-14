@@ -161,3 +161,29 @@
     }
   }
 }
+
+/* Mobile-friendly helpers */
+@layer base {
+  img,
+  picture,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Ensure main containers have comfortable side padding on small screens */
+  .container,
+  .mx-auto {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Slightly larger base font on very small devices for readability */
+  @media (max-width: 420px) {
+    html {
+      font-size: 15px;
+    }
+  }
+}

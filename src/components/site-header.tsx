@@ -25,7 +25,7 @@ export function SiteHeader() {
             </span>
           </a>
           <p className="mt-1 text-xs tracking-[0.28em] text-muted-foreground">
-            078 972 4254
+            <a href="tel:0789724254" className="hover:underline">078 972 4254</a>
           </p>
         </div>
 
