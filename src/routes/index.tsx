@@ -352,7 +352,7 @@ function Home() {
                 <MapPin className="size-4" /> 7 Arum Street, Milnerton, Cape Town, 7441
               </p>
               <p className="flex items-center gap-3">
-                <Phone className="size-4" /> +27 (0)21 000 0000
+                <Phone className="size-4" /> +27 78 972 4254
               </p>
               <p className="flex items-center gap-3">
                 <Mail className="size-4" /> stay@edionroyal.co.za
