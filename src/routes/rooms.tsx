@@ -1,7 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
+
 import roomDouble from "@/assets/room-double.jpg";
 import roomTwin from "@/assets/room-twin.jpg";
+import roomBudgetDouble from "@/assets/room-budget-double.jpg";
+import roomComfortTriple from "@/assets/room-comfort-triple.jpg";
+import roomFamily from "@/assets/room-family.jpg";
+import heroRooms from "@/assets/hero-rooms.jpg";
 
 export const Route = createFileRoute("/rooms")({
   head: () => ({
@@ -25,7 +30,6 @@ const rooms = [
     blurb:
       "A calm, recently renovated room with a private en-suite bathroom, work desk, flat-screen TV and a dressing area.",
     features: ["Private bathroom", "Work desk", "Flat-screen TV", "Wardrobe"],
-    note: "Includes taxes and charges",
   },
   {
     name: "Twin Room with Kitchenette",
@@ -34,52 +38,46 @@ const rooms = [
     blurb:
       "Ideal for longer stays and colleagues travelling together — two beds plus a fridge, microwave and full kitchenware set.",
     features: ["Fridge & microwave", "Kitchenware", "Private bathroom", "Free WiFi"],
-    note: "Includes taxes and charges",
   },
   {
-    name: "Classic Triple Room",
-    image: roomTwin,
-    sleeps: "2 guests",
+    name: "Triple Room",
+    image: roomComfortTriple, // temporary until you add room-triple.jpg
+    sleeps: "3 guests",
     blurb:
       "A spacious room with a large double bed, bathroom, and reliable WiFi. Great value with flexible cancellation.",
     features: ["Private bathroom", "Flat-screen TV", "Free WiFi", "Flexible cancellation"],
-    note: "Free cancellation before 10 September 2026",
   },
   {
     name: "Budget Double Room",
-    image: roomDouble,
+    image: roomBudgetDouble,
     sleeps: "2 guests",
     blurb:
       "A compact, affordable room with a large double bed, private bathroom, and all standard amenities.",
     features: ["Private bathroom", "Flat-screen TV", "Free WiFi", "Budget-friendly"],
-    note: "Free cancellation before 10 September 2026",
   },
   {
     name: "Comfort Triple Room with Shower",
-    image: roomTwin,
-    sleeps: "2 guests",
+    image: roomComfortTriple,
+    sleeps: "3 guests",
     blurb:
       "Comfortable triple room with shower, ideal for guests who want a little extra room and convenience.",
     features: ["Private bathroom", "Shower", "Flat-screen TV", "Free WiFi"],
-    note: "Non-refundable",
   },
   {
     name: "Budget Triple Room",
-    image: roomDouble,
-    sleeps: "2 guests",
+    image: roomComfortTriple, // temporary until you add room-budget-triple.jpg
+    sleeps: "3 guests",
     blurb:
       "A larger triple room with a single bed and an extra-large double bed, perfect for a small group.",
     features: ["Private bathroom", "Flat-screen TV", "Free WiFi", "Extra-large bed"],
-    note: "Free cancellation before 10 September 2026",
   },
   {
     name: "Family Room",
-    image: roomTwin,
-    sleeps: "2 guests",
+    image: roomFamily,
+    sleeps: "3–4 guests",
     blurb:
       "Family-friendly room with a single bed and a double bed, offering comfort and extra space.",
     features: ["Private bathroom", "Flat-screen TV", "Free WiFi", "Family layout"],
-    note: "Free cancellation before 10 September 2026",
   },
 ];
 
@@ -87,10 +85,11 @@ function Rooms() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
+
       <section className="relative">
         <img
-          src={roomDouble}
-          alt="Renovated Double Room"
+          src={heroRooms}
+          alt="Edion Royal Guesthouse Rooms"
           loading="lazy"
           width={1600}
           height={900}
@@ -111,9 +110,9 @@ function Rooms() {
           </div>
         </div>
       </section>
+
       <section className="bg-secondary/50 py-10">
         <div className="mx-auto max-w-6xl px-5 text-center">
-          
           <p className="mx-auto mt-5 max-w-2xl text-center text-muted-foreground sm:text-lg">
             Discover our comfortable, secure accommodation in Milnerton. Each room has been
             updated with modern amenities so your Cape Town stay is relaxed and easy.
@@ -143,9 +142,8 @@ function Rooms() {
                     {room.sleeps}
                   </span>
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground">{room.note}</p>
                 <p className="mt-4 text-sm text-muted-foreground">{room.blurb}</p>
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-5 flex flex-wrap justify-center gap-2">
                   {room.features.map((feature) => (
                     <li
                       key={feature}
